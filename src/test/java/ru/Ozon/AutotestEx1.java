@@ -22,7 +22,7 @@ public class AutotestEx1 {
     public void SetUp() {
         System.setProperty("webdriver.chrome.driver", "src/ChromeDriver/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        // options.addArguments("--user-data-dir=C:\\Users\\test\\AppData\\Local\\Google\\Chrome\\User Data\\", "--profile-directory=Profile 2");
+        options.addArguments("--user-data-dir=C:\\Users\\test\\AppData\\Local\\Google\\Chrome\\User Data\\", "--profile-directory=Profile 2");
         driver = new ChromeDriver();   // options
 
         js = (JavascriptExecutor)driver;
