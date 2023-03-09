@@ -6,13 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class CartPage {
     private WebDriver driver;
     private WebDriverWait wait;
     private JavascriptExecutor js;
     public CartPage(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 20);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
     @FindBy(xpath = "//div//a[@href = \"/cart\"]")
     private WebElement basket;
@@ -28,10 +30,13 @@ public class CartPage {
         String weight = weightElement.getText();
         String price = priceElement.getText();
 
+        wait.until(ExpectedConditions.visibilityOf(qTY));
+        wait.until(ExpectedConditions.elementToBeClickable(qTY));
         qTY.click();
         qTY.sendKeys(Keys.DOWN, Keys.ENTER);
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(), 'Ваша корзина')]//..//span[2]")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+                "//span[contains(text(), 'Ваша корзина')]//..//span[2]")));
         Thread.sleep(3000);
 
         int expectedWeight = Integer.parseInt(weight.substring(10, 13)) * 2;
@@ -44,7 +49,8 @@ public class CartPage {
 
         Assert.assertEquals(expectedWeight, actualWeight);
         Assert.assertEquals(expectedPrice, actualPrice);
-        Assert.assertEquals(2, Integer.parseInt(driver.findElement(By.xpath("//div[@role = 'listbox']//div//div//div")).getText()));
+        Assert.assertEquals(2, Integer.parseInt(driver.findElement(By.xpath(
+                "//div[@role = 'listbox']//div//div//div")).getText()));
     }
 
 
