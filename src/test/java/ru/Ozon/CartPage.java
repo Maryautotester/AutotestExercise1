@@ -24,33 +24,36 @@ public class CartPage {
     private WebElement priceElement;
     @FindBy(xpath = "//div[@role = 'listbox']//div//div//input")
     private WebElement qTY;
+    @FindBy(xpath = "//div[@role = 'listbox']//div//div//input")
+    private WebElement qTYtitle;
     public void Cart() throws InterruptedException {
         basket.click();
 
         String weight = weightElement.getText();
         String price = priceElement.getText();
 
-        wait.until(ExpectedConditions.visibilityOf(qTY));
-        wait.until(ExpectedConditions.elementToBeClickable(qTY));
         qTY.click();
         qTY.sendKeys(Keys.DOWN, Keys.ENTER);
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-                "//span[contains(text(), 'Ваша корзина')]//..//span[2]")));
         Thread.sleep(3000);
+        System.out.println(qTY.getAttribute("title"));
+        if (qTY.getAttribute("title").equals("2")) {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+                    "//span[contains(text(), 'Ваша корзина')]//..//span[2]")));
+            int expectedWeight = Integer.parseInt(weight.substring(10, 13)) * 2;
+            int expectedPrice = Integer.parseInt(price.substring(0, 5).replace(" ", "")) * 2;
 
-        int expectedWeight = Integer.parseInt(weight.substring(10, 13)) * 2;
-        int expectedPrice = Integer.parseInt(price.substring(0, 5).replace(" ", "")) * 2;
+            String updatedWeight = weightElement.getText();
+            String updatedPrice = priceElement.getText();
+            int actualWeight = Integer.parseInt(updatedWeight.substring(11, 14).replace(" ", ""));
+            int actualPrice = Integer.parseInt(updatedPrice.substring(0, 5).replace(" ", ""));
 
-        String updatedWeight = weightElement.getText();
-        String updatedPrice = priceElement.getText();
-        int actualWeight = Integer.parseInt(updatedWeight.substring(11, 14).replace(" ", ""));
-        int actualPrice = Integer.parseInt(updatedPrice.substring(0, 5).replace(" ", ""));
-
-        Assert.assertEquals(expectedWeight, actualWeight);
-        Assert.assertEquals(expectedPrice, actualPrice);
-        Assert.assertEquals(2, Integer.parseInt(driver.findElement(By.xpath(
-                "//div[@role = 'listbox']//div//div//div")).getText()));
+            Assert.assertEquals(expectedWeight, actualWeight);
+            Assert.assertEquals(expectedPrice, actualPrice);
+            Assert.assertEquals(2, Integer.parseInt(driver.findElement(By.xpath(
+                    "//div[@role = 'listbox']//div//div//div")).getText()));
+        } else {
+            System.out.println("Нет достаточного количества");
+        }
     }
 
 

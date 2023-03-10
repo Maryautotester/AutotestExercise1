@@ -6,9 +6,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 public class FilterPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
-    private JavascriptExecutor js;
+    public WebDriver driver;
+    public WebDriverWait wait;
+    public JavascriptExecutor js;
     public FilterPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -44,7 +44,7 @@ public class FilterPage {
 
         colour.click();
         expandList.click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
                 String.format("//div[@class='vue-portal-target']//*//div[text() = '%s']//..//..//..//div", Colour))));
         driver.findElement(By.xpath(String.format(
                 "//div[@class='vue-portal-target']//*//div[text() = '%s']//..//..//..//div", Colour))).click();
@@ -52,10 +52,10 @@ public class FilterPage {
                 String.format("//button//span[contains(text(), 'Цвет: %s')]", Colour))));
         colour.click();
 
-        if (!(Gender == "")) {
+        if (!(Gender.equals(""))) {
             genderlist.click();
-
             gender.click();
+            wait.until(ExpectedConditions.elementToBeClickable(priceList));
             genderlist.click();
             WebElement genderBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
                     String.format("//button//span[contains(text(), 'Пол: %s')]", Gender))));

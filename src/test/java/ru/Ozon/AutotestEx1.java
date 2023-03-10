@@ -19,7 +19,7 @@ public class AutotestEx1 {
         options.addArguments(
                 "start-maximized",
                 "--remote-allow-origins=*",
-                "--user-data-dir=C:\\Users\\test\\AppData\\Local\\Google\\Chrome\\User Data\\",
+                "--user-data-dir=C:\\Users\\<User name>\\AppData\\Local\\Google\\Chrome\\User Data\\",
                 "--profile-directory=Guest"
                 );
         driver = new ChromeDriver(options);
@@ -47,9 +47,9 @@ public class AutotestEx1 {
 
         homePage.open();
         homePage.searchProduct("светильник настольный");
-        filterPage.setAllFilters("золотой","800", "2000");
+        filterPage.setAllFilters("голубой","800", "2000");
         homePage.changeSortingtoLowPrice();
-        homePage.findproductbyName("Настольная лампа \"Лалия\"");
+        homePage.findproductbyName("Настольная лампа");
     }
     @After
     public void close() {
