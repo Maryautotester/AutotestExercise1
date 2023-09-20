@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="056e8790-9586-433f-834d-1f083c806e5b" name="Changes" comment="Updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/Ozon/AutotestEx1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/Ozon/AutotestEx1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/Ozon/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/Ozon/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/Ozon/FilterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/Ozon/FilterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/Ozon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/Ozon/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +55,33 @@
       <recent name="ru.Ozon" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AutotestEx1">
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="Sequences" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.Ozon.Sequences" />
+      <module name="AutotestEx1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.Ozon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.Ozon.Test" />
+      <module name="AutotestEx1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.Ozon.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AutotestEx1" type="JUnit" factoryName="JUnit">
       <module name="AutotestEx1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -118,35 +142,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AutotestEx1.autotestEx1b" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="AutotestEx1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ru.Ozon.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ru.Ozon" />
-      <option name="MAIN_CLASS_NAME" value="ru.Ozon.AutotestEx1" />
-      <option name="METHOD_NAME" value="autotestEx1b" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="Application.Sequences" />
+      <item itemvalue="Application.Test" />
       <item itemvalue="JUnit.AutotestEx1" />
       <item itemvalue="JUnit.AutotestEx1.autotestEx1" />
       <item itemvalue="JUnit.AutotestEx1.autotestEx11" />
       <item itemvalue="JUnit.AutotestEx1.autotestEx12" />
-      <item itemvalue="JUnit.AutotestEx1.autotestEx1b" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Sequences" />
         <item itemvalue="JUnit.AutotestEx1.autotestEx12" />
         <item itemvalue="JUnit.AutotestEx1.autotestEx11" />
         <item itemvalue="JUnit.AutotestEx1.autotestEx1" />
-        <item itemvalue="JUnit.AutotestEx1.autotestEx1b" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678385968761</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Updated">
+      <created>1678442713979</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678442713980</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
